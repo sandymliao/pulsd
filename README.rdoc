@@ -1,0 +1,7 @@
+- The recipient who is notified of any new events is the site/content administrator.
+- The administrator is notified via sms text message with a count of new events, through the twilio gem. (But sometimes this lags for a minute.)
+- The database auto-deletes any past events in cron.rake. All of the dates were scraped in string form and converted to Date objects. 
+- The scraping and auto-deleting has been automated by using the whenever gem in the schedule.rb file for automation scheduling.
+- The five content contributors chosen are: Chelsea Market, Madison Square Park, Radio City Music Hall, Strand Bookstore and Times Center. 
+- rake db:drop, rake db:create, rake db:migrate, rake cron:scrape_sites, rake cron:auto_delete, and rake twilio:send_text are all executable by running rake db:master_reset from the command line. 
+- I printed the @events array to the "screen" to visually show the database format.

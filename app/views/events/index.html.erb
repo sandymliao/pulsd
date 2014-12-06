@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div class="events_list light well">
+   <h1> Your Pulsd Adminstrator Dashboard</h1></br></br>
+    <% @events.all.each do |event| %>
+      <li>
+       <label> Event Name: </label> 
+       <p><%= event.name.upcase %></p>
+        <label> Start Date: </label> 
+        <p><%= event.start_date %></p>
+        <label> End Date:</label> 
+        <p><%= event.end_date %></p>
+        <label> Time: </label> 
+        <p><%= event.time %></p>
+       <label> Location:</label> 
+       <p><%= event.location %></p></br>
+      </li>
+    <% end %>
+    </div>
+  </body>
+</html>
