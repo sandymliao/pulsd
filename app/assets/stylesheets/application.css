@@ -13,10 +13,4 @@
  *= require_tree .
  *= require_self
  */
-#app/assets/stylesheets/layout/body.css.scss
-body {
-    background: asset_url('pulsd-new-york-2014.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
+/*@import 'events.css.scss'*/
