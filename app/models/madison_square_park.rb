@@ -14,15 +14,15 @@ class MadisonSquarePark
       if ele.css('.date-time').text.match(/\–/)
         end_date = ele.css('.date-time').text.split("–")[0].strip.concat(", 2014")
         new_end = Date.strptime(end_date, date_converter)
-        event[:end_date] = new_end
+        event[:end_date] = new_end.strftime("%B %d, %Y")
         event[:time] = ele.css('.date-time').text.split("–")[1].strip
       elsif ele.css('.date-time').text.match(/\-/)
         start_date = ele.css('.date-time').text.split("-")[0].strip.concat(", 2015")
         end_date = ele.css('.date-time').text.split("-")[1].strip
         new_start = Date.strptime(start_date, date_converter)
         new_end = Date.strptime(end_date, date_converter)
-        event[:start_date] = new_start
-        event[:end_date] = new_end
+        event[:start_date] = new_start.strftime("%B %d, %Y")
+        event[:end_date] = new_end.strftime("%B %d, %Y")
       end    
       event[:location] = "Madison Square Park"
       @events << event

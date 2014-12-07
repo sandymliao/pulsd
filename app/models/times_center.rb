@@ -14,7 +14,7 @@ class TimesCenter
      end_date = ele.css('h3').text
      new_end = Date.strptime(end_date, date_converter)
      event[:start_date] = "N/A"
-     event[:end_date] = new_end
+     event[:end_date] = new_end.strftime("%B %d, %Y")
      event[:time] = "N/A"
      event[:location] = "The Times Center, 242 West 41st Street, NYC 10036"
      @events << event

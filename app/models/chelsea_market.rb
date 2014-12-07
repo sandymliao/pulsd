@@ -13,10 +13,10 @@ class ChelseaMarket
       date_converter = ' %B %d, %Y'
       start_date = ele.css('.from-date').text.concat(", 2014")
       new_start = Date.strptime(start_date, date_converter)
-      event[:start_date] = new_start
+      event[:start_date] = new_start.strftime("%B %d, %Y")
       end_date = ele.css('.to-date').text.concat(", 2014")
       new_end = Date.strptime(end_date, date_converter)
-      event[:end_date] = new_end
+      event[:end_date] = new_end.strftime("%B %d, %Y")
       event[:time] = "Monday - Saturday: 7am to 9pm, Sunday: 8am to 8pm"
       event[:location] = "Chelsea Market at 75 9th Avenue (Btwn 15th and 16 Streets), New York, NY 10011"
       @events << event

@@ -14,3 +14,4 @@
  *= require_self
  */
 /*@import 'events.css.scss'*/
+background: url(<%= asset_data_uri 'pulsd-new-york-2014.jpg' %>)

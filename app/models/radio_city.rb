@@ -18,21 +18,21 @@ class RadioCity
          end_date = ele.css('.event_date').text.split(" - ")[1].concat(", 2015")
          new_start = Date.strptime(start_date, date_converter)
          new_end = Date.strptime(end_date, date_converter)
-         event[:start_date] = new_start
-         event[:end_date] = new_end
+         event[:start_date] = new_start.strftime("%B %d, %Y")
+         event[:end_date] = new_end.strftime("%B %d, %Y")
        else
          start_date = ele.css('.event_date').text.split(" - ")[0].concat(", 2015")
          end_date = ele.css('.event_date').text.split(" - ")[1].concat(", 2015")
          new_start = Date.strptime(start_date, date_converter)
          new_end = Date.strptime(end_date, date_converter)
-         event[:start_date] = new_start
-         event[:end_date] = new_end
+         event[:start_date] = new_start.strftime("%B %d, %Y")
+         event[:end_date] = new_end.strftime("%B %d, %Y")
        end
       else 
         end_date = ele.css('.event_date').text.concat(", 2015")
         new_end = Date.strptime(end_date, date_converter)
         event[:start_date] = "N/A"
-        event[:end_date] = new_end
+        event[:end_date] = new_end.strftime("%B %d, %Y")
       end
       event[:time] = ele.css('.event_time').text
       event[:location] = ele.css('.venue_loc').text
