@@ -1,23 +1,23 @@
 <html>
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+
   <body>
-    <div class="events_list light well">
-   <h1> Your Pulsd Adminstrator Dashboard</h1></br></br>
-   <table>
+    <div class="light well">
+   <h1><font color="#09014C"> Your Pulsd Administrator Dashboard</font></h1></br></br>
+   <table border="5" width="100%" cellpadding="4" cellspacing="3" width="100%" style="border:1px solid black;">
       <tr>
-        <th> Event Name:</th>
-        <th> Start Date:</th>
-        <th> End Date:</th>
-        <th> Time:</th>
-        <th> Location:</th>
+        <th style="text=align:center" width="30%"><font color="#09014C"> Event Name:</font></th>
+        <th style="text=align:center" width="10%"><font color="#09014C"> Start Date:</font></th>
+        <th style="text=align:center" width="10%"> <font color="#09014C"> End Date:</font></th>
+        <th style="text=align:center" width="5%"><font color="#09014C"> Time:</font></th>
+        <th style="text=align:center" width="40%"><font color="#09014C"> Location:</font></th>
       </tr>
     <% @events.all.each do |event| %>
       <tr>
-        <td><%= event.name.camelcase %></td>
-        <td><%= event.start_date %></td>
-        <td><%= event.end_date %></td>
-        <td><%= event.time %></td>
-        <td><%= event.location %></td>
+        <td><font color="#09014C"><%= event.name.camelcase %></font></td>
+        <td><font color="#09014C"><%= event.start_date%></font>
+        <td><font color="#09014C"><%= event.end_date %></font>
+        <td><font color="#09014C"><%= event.time %></font>
+        <td><font color="#09014C"><%= event.location %></font>
       </tr>
     <% end %>
     </div>
