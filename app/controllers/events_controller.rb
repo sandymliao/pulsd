@@ -3,13 +3,19 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def run_scraper
+    system "rake db:master_reset"
+    @events = Event.all
+  end
+
   def create
     @event = Event.new(event_params)
     @event.save
   end
 
   def index
-    @events = Event.all
+    #system "rake db:master_reset"
+    
   end
 
   def destroy

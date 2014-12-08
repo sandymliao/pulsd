@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  post 'show_events', to: 'events#run_scraper', :as => 'show_events'
   resources :events, only: [:index, :destroy, :new, :show, :create] 
   root :to =>'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
